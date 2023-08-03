@@ -1,0 +1,17 @@
+.succsess{
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 200px;
+    height: auto;
+    padding: 10px 20px;
+    background-color: rgb(31, 187, 39);
+    font-size: 12px;
+    border-radius: 5px;
+    color: #fff;
+    &.active{
+        display: flex;
+    }
+    
+}
