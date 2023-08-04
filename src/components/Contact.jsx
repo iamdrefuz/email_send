@@ -91,11 +91,13 @@ export const ContactUs = () => {
       <input type="submit" className='btn' value="Tayyor" />
     </form>
     <div className="links">
+      
         <ul>
-          <li><a href="/"><FaTelegram/></a></li>
-          <li><a href="/"><FaInstagram/></a></li>
-          <li><a href="/"><FaTwitter/></a></li>
-          <li><a href="/"><FaGlobe/></a></li>
+          
+          <li><a href="https://t.me/drefuz"><FaTelegram/></a></li>
+          <li><a href="https://instagram.com/f.jumabayev"><FaInstagram/></a></li>
+          <li><a href="https://twitter.com/iamdrefuz"><FaTwitter/></a></li>
+          <li><a href="https://drefuz-portfolio.netlify.app"><FaGlobe/></a></li>
         </ul>
     </div>
    </div>
