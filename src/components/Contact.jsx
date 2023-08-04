@@ -47,14 +47,7 @@ export const ContactUs = () => {
       
     </div>
     <Danger />
-    <div className="links">
-        <ul>
-          <li><a href="/"><FaTelegram/></a></li>
-          <li><a href="/"><FaInstagram/></a></li>
-          <li><a href="/"><FaTwitter/></a></li>
-          <li><a href="/"><FaGlobe/></a></li>
-        </ul>
-    </div>
+    
      <form ref={form} onSubmit={sendEmail} className="filed">
       <div className="drefuz-title">
         <div className="title">
@@ -97,6 +90,14 @@ export const ContactUs = () => {
       <textarea name="message" id='input5' placeholder='Your message'required/>
       <input type="submit" value="Send" />
     </form>
+    <div className="links">
+        <ul>
+          <li><a href="/"><FaTelegram/></a></li>
+          <li><a href="/"><FaInstagram/></a></li>
+          <li><a href="/"><FaTwitter/></a></li>
+          <li><a href="/"><FaGlobe/></a></li>
+        </ul>
+    </div>
    </div>
   );
 };
