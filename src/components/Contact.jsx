@@ -2,10 +2,13 @@ import  { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import Danger from './Danger';
 import Succsess from './Succsess';
-
+import Error from './Error';
+import Img from '../assets/Drefuz_Team-2-removebg.png'
+import {FaTelegram,FaInstagram,FaTwitter,FaGlobe} from 'react-icons/fa'
 export const ContactUs = () => {
   const form = useRef();
   const sendEmail = (e) => {
+    
     e.preventDefault();
     document.querySelector('.danger-alert').classList.add('active')
     emailjs.sendForm('service_2bcih0n', 'template_j179dsr', form.current, 'P_HilTmVcBuCFT6JI')
@@ -17,33 +20,61 @@ export const ContactUs = () => {
           document.querySelector('#input4').value = "";
           document.querySelector('#input5').value = "";
           document.querySelector('.danger-alert').classList.remove('active')
-          document.querySelector('.succsess').classList.add('active')
+          document.querySelector('.wrapper-succsess').classList.add('active')
+          document.querySelector('.wrapper-succsess').addEventListener("click", ()=>{
+            document.querySelector('.wrapper-succsess').classList.remove('active')
+          })
           setTimeout(()=>{
-            document.querySelector('.succsess').classList.remove('active')
+            document.querySelector('.wrapper-succsess').classList.remove('active')
           },5000)
       }, (error) => {
-          alert(error.text , 'error');
+          console.log(error.text , 'error');
+          document.querySelector('.wrapper-error').classList.add('active')
+          document.querySelector('.wrapper-error').addEventListener("click", ()=>{
+            document.querySelector('.wrapper-error').classList.remove('active')
+          })
+          setTimeout(()=>{
+            document.querySelector('.wrapper-error').classList.remove('active')
+          },5000)
       });
   };
 
   return (
    <div className="main-contact">
-    <Succsess text = "Message succsessfull sent"/>
+    <Succsess text = "Xabar muvaffaqiyatli yuborlidi"/>
+    <Error text = "Xabar yuborilmadi"/>
     <div className="bg">
       
     </div>
     <Danger />
+    <div className="links">
+        <ul>
+          <li><a href="/"><FaTelegram/></a></li>
+          <li><a href="/"><FaInstagram/></a></li>
+          <li><a href="/"><FaTwitter/></a></li>
+          <li><a href="/"><FaGlobe/></a></li>
+        </ul>
+    </div>
      <form ref={form} onSubmit={sendEmail} className="filed">
+      <div className="drefuz-title">
+        <div className="title">
+        
+        </div>
+        <img src={Img} alt="" />
+        <span>Contact</span>
+        
+      </div>
+      
       <label onClick={()=>{
        
-      }}>Ism ?</label>
-      <input type="text" name="user_name" id='input1' placeholder='Your name'/>
+      }}>Ism</label>
+      <input type="text" name="user_name" id='input1'autoCapitalize='on' placeholder='Your name' required/>
       <label>Email</label>
-      <input type="email" name="user_email" id='input2' placeholder='Your email'/>
+      <input type="email" name="user_email" id='input2' placeholder='Your email'required/>
       <label>Telefon raqam</label>
-      <input type="number" name="user_phone" id='input3' placeholder='Your Phone'/>
+      <input autoComplete='on' type="number" name="user_phone" id='input3' placeholder='Your Phone'required/>
       <label>Telegram username</label>
-      <input type="text" name="tg_user"  id='input4'placeholder='Your tg username'/>
+      <input type="text" name="tg_user"  id='input4'placeholder='Your username'required/>
       <label>Sinf</label>
       <select name="user_class" id="">
         <option value="none" hidden selected >Sinf</option>
@@ -63,7 +94,7 @@ export const ContactUs = () => {
         <option value="alo">A`lo</option>
       </select>
       <label>Xabar</label>
-      <textarea name="message" id='input5' placeholder='Your message'/>
+      <textarea name="message" id='input5' placeholder='Your message'required/>
       <input type="submit" value="Send" />
     </form>
    </div>
