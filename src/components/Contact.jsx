@@ -93,7 +93,7 @@ export const ContactUs = () => {
     <div className="links">
       
         <ul>
-          
+          <div className="bg"></div>
           <li><a href="https://t.me/drefuz"><FaTelegram/></a></li>
           <li><a href="https://instagram.com/f.jumabayev"><FaInstagram/></a></li>
           <li><a href="https://twitter.com/iamdrefuz"><FaTwitter/></a></li>
