@@ -88,7 +88,7 @@ export const ContactUs = () => {
       </select>
       <label>Xabar</label>
       <textarea name="message" id='input5' placeholder='Your message'required/>
-      <input type="submit" value="Send" />
+      <input type="submit" className='btn' value="Tayyor" />
     </form>
     <div className="links">
         <ul>

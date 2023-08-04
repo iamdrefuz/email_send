@@ -1,6 +1,6 @@
 .main-contact {
   width: 100%;
-  max-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -84,10 +84,16 @@
   width: 60px;
 }
 .main-contact .filed label {
-  font-size: 11px;
+  font-size: 13px;
+  color: rgb(59, 59, 59);
+}
+@media (max-width: 569px) {
+  .main-contact .filed label {
+    font-size: 18px;
+  }
 }
 .main-contact .filed input {
-  height: 30px;
+  height: 35px;
   border: 1px solid gray;
   outline: none;
   border-radius: 8px;
@@ -95,15 +101,15 @@
 }
 .main-contact .filed input::-moz-placeholder {
   font-size: 13px;
-  color: rgb(81, 81, 81);
+  color: rgb(118, 118, 118);
 }
 .main-contact .filed input:-ms-input-placeholder {
   font-size: 13px;
-  color: rgb(81, 81, 81);
+  color: rgb(118, 118, 118);
 }
 .main-contact .filed input::placeholder {
   font-size: 13px;
-  color: rgb(81, 81, 81);
+  color: rgb(118, 118, 118);
 }
 .main-contact .filed input:focus::-moz-placeholder {
   color: #000;
@@ -114,12 +120,21 @@
 .main-contact .filed input:focus::placeholder {
   color: #000;
 }
+.main-contact .filed .btn {
+  background: rgb(255, 255, 255);
+  transition: 0.3s;
+}
+.main-contact .filed .btn:hover {
+  background: rgb(34, 161, 40);
+  color: #fff;
+}
 .main-contact .filed textarea {
   padding: 10px;
   outline: none;
+  border-radius: 5px;
 }
 .main-contact .filed textarea:focus {
-  border-color: rgb(30, 198, 63);
+  border: 2px solid rgb(34, 161, 40);
 }
 
 .danger-alert {
